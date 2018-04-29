@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #accbee 0%, #e7f0fd 100%);
+  font-family: Lato; }
+
+.inbox {
+  background-color: white;
+  font-size: 2rem;
+  max-width: 60rem;
+  margin: 10rem auto;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .inbox__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee; }
+    .inbox__item:last-child {
+      border-bottom: 0; }
+    .inbox__item > * {
+      padding: 1rem; }
+  .inbox__checkbox {
+    width: 5rem;
+    transform: scale(1.2); }
+    .inbox__checkbox:focus {
+      outline: none; }
+  .inbox__checkbox:checked + .inbox__item-name {
+    background: #eee;
+    text-decoration: line-through; }
+  .inbox__item-name {
+    flex: 1;
+    border-left: 2px solid #eee; }

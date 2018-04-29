@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    font-size: 62.5%;
+}
+
+$body-background: linear-gradient(to bottom right, #accbee 0%, #e7f0fd 100%);
+$color-inbox-bg: white;
+
+
+body {
+    height: 100vh;
+    background-image: $body-background;
+    font-family: Lato;
+}
+
+.inbox {
+    background-color: $color-inbox-bg;
+    font-size: 2rem;
+    max-width: 60rem;
+    margin: 10rem auto;
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.15);
+    
+
+    &__item {
+        display: flex;
+        align-items: center;
+        border: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        & > * {   // prob not the best way
+            padding: 1rem;
+        }
+    }
+
+    &__checkbox {
+        width: 5rem;  // padding has no effect? (but margin does?) why?
+        transform: scale(1.2);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__checkbox:checked + &__item-name {
+        background: #eee;
+        text-decoration: line-through;
+    }
+
+    &__item-name {
+        flex: 1;
+        border-left: 2px solid #eee;
+    }
+}
